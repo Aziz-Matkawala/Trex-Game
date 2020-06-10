@@ -6,6 +6,8 @@ var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 
 var score;
 
+var arrow, arrowImage;
+
 var restart, restartImage;
 var gameOver, gameOverImage;
 
@@ -31,6 +33,7 @@ function preload(){
   
   restartImage = loadImage("restart.png");
   gameOverImage = loadImage("gameOver.png");
+  arrowImage = loadImage("up arrow.png");
   
   jump = loadSound("jump.mp3");
   die = loadSound("die.mp3");
@@ -39,6 +42,9 @@ function preload(){
 
 function setup() {
   createCanvas(600, 200);
+  
+  arrow = createSprite(550, 190);
+  arrow.addImage("arrow", arrowImage);
   
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
@@ -76,7 +82,7 @@ function draw() {
   
   if(gameState === PLAY){
      score = score + Math.round(getFrameRate()/60);
-    if(keyDown("space") && trex.y>=155) {
+    if(mousePressedver(arrow) && trex.y>=155) {
     trex.velocityY = -12;
     jump.play();
   }
