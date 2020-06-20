@@ -45,6 +45,7 @@ function setup() {
   
   arrow = createSprite(550, 190);
   arrow.addImage("arrow", arrowImage);
+  arrow.scale = 0.25
   
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
@@ -82,7 +83,7 @@ function draw() {
   
   if(gameState === PLAY){
      score = score + Math.round(getFrameRate()/60);
-    if(mousePressedOver("arrow") && trex.y>=155) {
+    if(mousePressedOver(arrow) && trex.y>=155) {
     trex.velocityY = -12;
     jump.play();
   }
