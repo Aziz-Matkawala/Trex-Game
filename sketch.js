@@ -45,7 +45,7 @@ function setup() {
   
   arrow = createSprite(550, 190);
   arrow.addImage("arrow", arrowImage);
-  arrow.scale = 0.25
+  arrow.scale = 0.05
   
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
