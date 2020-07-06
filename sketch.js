@@ -83,7 +83,7 @@ function draw() {
   
   if(gameState === PLAY){
      score = score + Math.round(getFrameRate()/60);
-    if(mousePressedOver(arrow) && trex.y>=155) {
+    if(keyDown("space") && trex.y>=155) {
     trex.velocityY = -12;
     jump.play();
   }
